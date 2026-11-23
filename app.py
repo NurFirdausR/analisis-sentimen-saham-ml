@@ -13,8 +13,7 @@ st.write("Klasifikasi sentimen berita & katalis emiten (**Bullish / Positif** vs
 @st.cache_resource
 def load_and_train():
     df = pd.read_csv("dataset_saham.csv", sep=';')
-    df["berita"] = df["berita"].str.strip()
-    df["sentimen"] = df["sentimen"].str.strip()
+ 
     
     X_train, X_test, y_train, y_test = train_test_split(
         df["berita"], df["sentimen"], test_size=0.2, random_state=42
